@@ -85,7 +85,7 @@ while (cap.isOpened()):
 
     # Blur
     # frame = cv2.blur(frame, (4, 4))
-    
+
     canny_image = canny(frame)
     cropped_image = region_of_interest(canny_image)
     lines = cv2.HoughLinesP(cropped_image, 2, np.pi / 180, 100, np.array([]), minLineLength=40, maxLineGap=5)
