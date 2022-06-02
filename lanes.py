@@ -30,7 +30,6 @@ def average_slope_intercept(image,lines):
         right_line = make_coordinates(image, right_fit_average)
         return np.array([left_line, right_line])
     except Exception as e:
-        print(e)
         return None
 
 def canny(image):
@@ -42,7 +41,7 @@ def display_lines(image, lines):
     line_image = np.zeros_like(image)
     if lines is not None:
         for x1,y1,x2,y2 in lines:
-            cv2.line(line_image,(x1,y1), (x2,y2), (200,0,200), 10)
+            cv2.line(line_image,(x1,y1), (x2,y2), (255,0,0), 10)
     return line_image
 
 def region_of_interest(image):
@@ -97,4 +96,3 @@ while (cap.isOpened()):
         break
 cap.release()
 cv2.destroyAllWindows()
-
